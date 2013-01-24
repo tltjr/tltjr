@@ -134,6 +134,15 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Img\banner_mongo-db-huge-logo.png" />
+    <Content Include="Content\Img\dotnet-logo.png" />
+    <Content Include="Content\Img\jquery-logo.jpg" />
+    <Content Include="Content\Img\ko-transp.png" />
+    <Content Include="Content\Img\SQL-Server-2012.jpg" />
+    <Content Include="Content\Img\typescript-logo.png" />
+    <Content Include="Content\Img\vs2012-grey.png" />
+    <Content Include="Content\Img\vs2012-life.jpg" />
+    <Content Include="Content\Img\vs2012-standard.jpg" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
