@@ -4,9 +4,9 @@
     overflow: hidden;
     background-image: url(/Content/Img/otis_redding.png);
     background-repeat: repeat;
+    margin-bottom: 60px;
 }
 
 #main {
-    margin-bottom: 60px;
     height: 500px;
 }
