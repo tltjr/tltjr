@@ -7,10 +7,10 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    @Styles.Render("~/Content/css")
     @Styles.Render("~/Content/bootstrap")
     @Styles.Render("~/Content/custom")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -41,7 +41,6 @@
     <script src="../assets/js/bootstrap-carousel.js"></script>
     <script src="../assets/js/bootstrap-typeahead.js"></script>-->
 
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

@@ -9,7 +9,9 @@ namespace tltjr
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-{version}.js",
+                        "~/Scripts/jquery.nivo.slider.js",
+                        "~/Scripts/jquery.nivo.slider.pack.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -46,7 +48,10 @@ namespace tltjr
                         "~/Content/bootstrap-responsive.css"));
 
             bundles.Add(new StyleBundle("~/Content/custom").Include(
+                        "~/Content/Nivo/nivo-slider.css",
+                        "~/Content/Nivo/themes/default/default.css",
                         "~/Content/styles.css"));
+
         }
     }
 }

@@ -32,6 +32,13 @@
     margin-top: 160px;
     width: 550px;
     height: 254px;
-    background-color: red;
     float: left;
+}
+
+#throwaway {
+    margin-top: 160px;
+    width: 550px;
+    height: 254px;
+    float: left;
+    background-color: black;
 }

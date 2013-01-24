@@ -144,6 +144,11 @@
     <Content Include="Content\Img\vs2012-grey.png" />
     <Content Include="Content\Img\vs2012-life.jpg" />
     <Content Include="Content\Img\vs2012-standard.jpg" />
+    <Content Include="Content\Nivo\nivo-slider.css" />
+    <Content Include="Content\Nivo\themes\default\arrows.png" />
+    <Content Include="Content\Nivo\themes\default\bullets.png" />
+    <Content Include="Content\Nivo\themes\default\default.css" />
+    <Content Include="Content\Nivo\themes\default\loading.gif" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -208,6 +213,8 @@
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.js" />
     <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery.nivo.slider.js" />
+    <Content Include="Scripts\jquery.nivo.slider.pack.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
