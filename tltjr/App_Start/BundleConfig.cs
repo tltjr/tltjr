@@ -44,6 +44,9 @@ namespace tltjr
                         "~/Content/bootstrap.css",
                         "~/Content/bootstrap-theme.css",
                         "~/Content/bootstrap-responsive.css"));
+
+            bundles.Add(new StyleBundle("~/Content/custom").Include(
+                        "~/Content/styles.css"));
         }
     }
 }

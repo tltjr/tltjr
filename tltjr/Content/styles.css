@@ -1,0 +1,12 @@
+﻿#main-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: url(/Content/Img/otis_redding.png);
+    background-repeat: repeat;
+}
+
+#main {
+    margin-bottom: 60px;
+    height: 500px;
+}
