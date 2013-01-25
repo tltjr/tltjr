@@ -122,6 +122,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -139,6 +140,7 @@
     <Content Include="Content\Img\jquery-logo.jpg" />
     <Content Include="Content\Img\ko-transp.png" />
     <Content Include="Content\Img\otis_redding.png" />
+    <Content Include="Content\Img\paper_2.png" />
     <Content Include="Content\Img\SQL-Server-2012.jpg" />
     <Content Include="Content\Img\typescript-logo.png" />
     <Content Include="Content\Img\vs2012-grey.png" />
@@ -149,6 +151,8 @@
     <Content Include="Content\Nivo\themes\default\bullets.png" />
     <Content Include="Content\Nivo\themes\default\default.css" />
     <Content Include="Content\Nivo\themes\default\loading.gif" />
+    <Content Include="Content\reset-fonts-grids.css" />
+    <Content Include="Content\resume.css" />
     <Content Include="Content\styles.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -239,6 +243,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_NavBar.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
