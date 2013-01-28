@@ -52,6 +52,10 @@ namespace tltjr
                         "~/Content/Nivo/themes/default/default.css",
                         "~/Content/styles.css"));
 
+            bundles.Add(new StyleBundle("~/Content/citypress").Include(
+                        "~/Content/Blog/ie.css",
+                        "~/Content/Blog/prettyPhoto.css",
+                        "~/Content/Blog/style.css"));
         }
     }
 }
