@@ -152,6 +152,7 @@
     <Content Include="Content\Img\body-bg.gif" />
     <Content Include="Content\Img\comments.png" />
     <Content Include="Content\Img\dotnet-logo.png" />
+    <Content Include="Content\Img\dotnet4logo.jpg" />
     <Content Include="Content\Img\email.png" />
     <Content Include="Content\Img\facebook.png" />
     <Content Include="Content\Img\facebookh.png" />
@@ -169,6 +170,7 @@
     <Content Include="Content\Img\logo.png" />
     <Content Include="Content\Img\magnify.png" />
     <Content Include="Content\Img\mail.png" />
+    <Content Include="Content\Img\microsoft-net-logo.png" />
     <Content Include="Content\Img\otis_redding.png" />
     <Content Include="Content\Img\paper_2.png" />
     <Content Include="Content\Img\phone.png" />
@@ -191,6 +193,7 @@
     <Content Include="Content\Img\vs2012-grey.png" />
     <Content Include="Content\Img\vs2012-life.jpg" />
     <Content Include="Content\Img\vs2012-standard.jpg" />
+    <Content Include="Content\Img\xl.sqlserver_12_horiz.jpg" />
     <Content Include="Content\Nivo\nivo-slider.css" />
     <Content Include="Content\Nivo\themes\default\arrows.png" />
     <Content Include="Content\Nivo\themes\default\bullets.png" />
