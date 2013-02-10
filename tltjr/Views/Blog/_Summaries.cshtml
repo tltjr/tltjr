@@ -1,4 +1,6 @@
-﻿<section id="page-sidebar" class="alignleft span8">
+﻿@model IEnumerable<tltjr.Models.Post>
+
+<section id="page-sidebar" class="alignleft span8">
     <!-- content -->
     <div class="row">
         <div class="span8">
@@ -7,110 +9,31 @@
                 <div class="divider-arrow"></div>
             </div>
         </div>
-        <article class="blog-post span8">
-            <div class="block-grey">
-                <div class="block-light">
-                    <div class="wrapper-img">
-                        <a href="./portfolio2.html">
-                            <img src="example/blog1.jpg" alt="photo" /></a>
-                    </div>
-                    <div class="wrapper">
-                        <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                        <a href="#" class="blog-comments">3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
-                                        <a href="#" class="read-more">[...]</a>
-                        </p>
-                        <p class="tags">
-                            Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="blog-post span8">
-            <div class="block-grey">
-                <div class="block-light">
-                    <div class="wrapper-img">
-                        <a href="./portfolio2.html">
-                            <img src="example/blog2.jpg" alt="photo" /></a>
-                    </div>
-                    <div class="wrapper">
-                        <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                        <a href="#" class="blog-comments">3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
-                                        <a href="#" class="read-more">[...]</a>
-                        </p>
-                        <p class="tags">
-                            Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="blog-post span8">
-            <div class="block-grey">
-                <div class="block-light">
-                    <div class="wrapper">
-                        <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                        <a href="#" class="blog-comments">3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
-                                        <a href="#" class="read-more">[...]</a>
-                        </p>
-                        <p class="tags">
-                            Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="blog-post span8">
-            <div class="block-grey">
-                <div class="block-light">
-                    <div class="wrapper">
-                        <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                        <a href="#" class="blog-comments">3</a>
-                        <blockquote>
+
+        @for (int i = 0; i < 4; i++)
+        {
+            <article class="blog-post span8">
+                <div class="block-grey">
+                    <div class="block-light">
+                        <div class="wrapper-img">
+                            <a href="./portfolio2.html">
+                                <img src="example/blog1.jpg" alt="photo" /></a>
+                        </div>
+                        <div class="wrapper">
+                            <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
+                            <a href="#" class="blog-comments">3</a>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                                            Morbi posuere metus ut sem pellentesque nec ullamcorper leo sollicitudin.
-                                            Sed adipiscing placerat eros id tincidunt. Donec eu luctus tortor.
+                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
+                                          sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
+                                          <a href="#" class="read-more">[...]</a>
                             </p>
-                        </blockquote>
-                        <p class="tags">
-                            Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </article>
-        <article class="blog-post span8">
-            <div class="block-grey">
-                <div class="block-light">
-                    <div class="wrapper-img">
-                        <div class="video">
-                            <iframe src="http://player.vimeo.com/video/35396305" width="" height="" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                            <p class="tags">
+                                Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
+                            </p>
                         </div>
                     </div>
-                    <div class="wrapper">
-                        <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                        <a href="#" class="blog-comments">3</a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                        sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
-                                        <a href="#" class="read-more">[...]</a>
-                        </p>
-                        <p class="tags">
-                            Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
-                        </p>
-                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        }
     </div>
 </section>
