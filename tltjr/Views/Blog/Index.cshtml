@@ -2,6 +2,12 @@
 
 <!-- container -->
 <section id="container">
+    @if (User.Identity.IsAuthenticated) {
+        <div id="new_post">
+            @Html.ActionLink("New Post", "New", "Blog")
+            @Html.ActionLink("Log Off", "LogOff", "Account")
+        </div>
+    }
     <div class="container">
         <div class="row down160">
             <!-- page content -->
