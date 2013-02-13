@@ -10,11 +10,11 @@
             <legend></legend>
 
             @Html.LabelFor(model => model.Title)
-            @Html.TextBoxFor(model => model.Title, new { @id = "new-post-title" })
+            @Html.TextBoxFor(model => model.Title, new { @class = "editor-post-title" })
             <label>Tags (comma seperated)</label>
-            @Html.TextBoxFor(model => model.TagsRaw, new { @id = "new-post-tags" })
+            @Html.TextBoxFor(model => model.TagsRaw, new { @class = "editor-post-tags" })
             @Html.LabelFor(model => model.Body)
-            @Html.TextAreaFor(model => model.Body, new { @id = "new-post-body" })
+            @Html.TextAreaFor(model => model.Body, new { @class = "editor-post-body" })
 
             <p>
                 <input type="submit" value="Save" />

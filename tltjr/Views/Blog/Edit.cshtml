@@ -1,0 +1,16 @@
+﻿@model tltjr.Models.Post
+
+<div class="container down160">
+    <h2>Edit Post</h2>
+
+    @using (Html.BeginForm())
+    {
+        <div>@Html.TextBoxFor(x => x.Title, new { @class = "editor-post-title" })</div>
+        <div>@Html.TextBoxFor(x => x.TagsRaw, new { @class = "editor-post-tags" })</div>
+        <div>@Html.TextAreaFor(x => x.Body, new { @class = "editor-post-body" })</div>
+
+        <input type="submit" value="Submit" /> 
+        var id = Model.Id;
+        @Html.ActionLink("Delete", "Delete", "Home", new { id }, null);
+    }
+</div>

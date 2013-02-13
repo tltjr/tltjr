@@ -47,15 +47,15 @@
     margin-top: 160px;
 }
 
-#new-post-title {
+.editor-post-title {
     width: 300px;
 }
 
-#new-post-tags {
+.editor-post-tags {
     width: 300px;
 }
 
-#new-post-body {
+.editor-post-body {
     width: 500px;
     height: 500px;
 }
