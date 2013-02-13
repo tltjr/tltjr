@@ -3,9 +3,9 @@
 <!-- container -->
 <section id="container">
     @if (User.Identity.IsAuthenticated) {
-        <div id="new_post">
-            @Html.ActionLink("New Post", "New", "Blog")
-            @Html.ActionLink("Log Off", "LogOff", "Account")
+        <div id="admin-actions">
+            @Html.ActionLink("New Post", "New", "Blog", new { @class = "admin-link" })
+            @Html.ActionLink("Log Off", "LogOff", "Account", new { @class = "admin-link" })
         </div>
     }
     <div class="container">
