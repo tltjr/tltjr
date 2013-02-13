@@ -21,7 +21,7 @@
                                     <h2 class="post-title">@Model.Post.Title</h2>
                                     @if (User.Identity.IsAuthenticated)
                                     {
-                                        <div class="edit blog-comments">
+                                        <div class="edit">
                                             @Html.ActionLink("Edit", "Edit", new { objectId = Model.Post.Id}, null)
                                         </div>
                                     }
