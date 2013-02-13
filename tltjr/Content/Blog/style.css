@@ -1391,7 +1391,10 @@ article.span3 h4{
 }
 .blog-post .meta a{color: #83a400;}
 .blog-post .meta a:hover{color: #777;}
-.blog-post .tags {font-style: italic;}
+.blog-post .tags {
+    font-style: italic;
+    margin-top: 25px;
+}
 .blog-post.style2 img{
     width: 50%;
     float: left;
