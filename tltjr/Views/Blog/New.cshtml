@@ -1,0 +1,24 @@
+﻿@model tltjr.Models.Post
+
+<div class="container down160">
+    <h2>New Post</h2>
+
+    @*<form action="/Home/create" method=post>*@
+    @using (Html.BeginForm())
+    {
+        <fieldset>
+            <legend></legend>
+
+            @Html.LabelFor(model => model.Title)
+            @Html.TextBoxFor(model => model.Title, new { @id = "new-post-title" })
+            <label>Tags (comma seperated)</label>
+            @Html.TextBoxFor(model => model.TagsRaw, new { @id = "new-post-tags" })
+            @Html.LabelFor(model => model.Body)
+            @Html.TextAreaFor(model => model.Body, new { @id = "new-post-body" })
+
+            <p>
+                <input type="submit" value="Save" />
+            </p>
+        </fieldset>
+    }
+</div>

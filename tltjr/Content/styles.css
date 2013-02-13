@@ -46,3 +46,16 @@
 .down160 {
     margin-top: 160px;
 }
+
+#new-post-title {
+    width: 300px;
+}
+
+#new-post-tags {
+    width: 300px;
+}
+
+#new-post-body {
+    width: 500px;
+    height: 500px;
+}
