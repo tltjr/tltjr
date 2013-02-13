@@ -1,4 +1,4 @@
-﻿@model tltjr.Models.Post
+﻿@model tltjr.Models.PostModel
 
 <!-- container -->
 <section id="container">
@@ -18,22 +18,22 @@
                         <div class="block-grey">
                             <div class="block-light">
                                 <div class="wrapper">
-                                    <h2 class="post-title">@Model.Title</h2>
+                                    <h2 class="post-title">@Model.Post.Title</h2>
                                     @if (User.Identity.IsAuthenticated)
                                     {
                                         <div class="edit blog-comments">
-                                            @Html.ActionLink("Edit", "Edit", new { objectId = Model.Id}, null)
+                                            @Html.ActionLink("Edit", "Edit", new { objectId = Model.Post.Id}, null)
                                         </div>
                                     }
                                     @{
-                                        var body = Model.Body;
+                                        var body = Model.Post.Body;
                                         var bodyHtml = body.Replace("\r\n", "<br />");
                                         @Html.Raw(bodyHtml)
                                     }
                                     <p class="tags">
-                                        @if (Model.Tags != null) 
+                                        @if (Model.Post.Tags != null) 
                                         {
-                                            @Html.Partial("_Tags", Model.Tags)
+                                            @Html.Partial("_Tags", Model.Post.Tags)
                                         }
                                     </p>
                                     <hr>
@@ -44,7 +44,7 @@
                     </article>
                 </div>
             </section>
-            @Html.Partial("_Sidebar")
+            @Html.Partial("_Sidebar", Model.SidebarModel)
         </div>
     </div>
 </section>

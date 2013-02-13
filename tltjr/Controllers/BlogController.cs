@@ -22,7 +22,8 @@ namespace tltjr.Controllers
             ViewBag.Title = "Blog";
             var posts = _postRepository.FindAll().ToList();
 			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            return View(posts.Take(10));
+            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            return View(indexModel);
         }
 
         [Authorize]
@@ -50,14 +51,18 @@ namespace tltjr.Controllers
         {
             ViewBag.Title = "Blog";
             var post = _postRepository.FindOneByKey("Slug", slug);
-            return View(post);
+            var posts = _postRepository.FindAll().ToList();
+			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
+            var postModel = new PostModel { Post = post, SidebarModel = new SidebarModel(posts.Take(3)) };
+            return View(postModel);
         }
 
         public ActionResult Tag(string tag)
         {
             ViewBag.Title = "Posts Tagged: " + tag;
             var posts = _postRepository.FindAllByKey("Tags", tag);
-            return View("Index", posts);
+            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            return View("Index", indexModel);
         }
 
         [Authorize]
@@ -89,11 +94,15 @@ namespace tltjr.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Archive()
+        public ActionResult Archive(DateTime dateTime)
         {
-            var posts = _postRepository.FindAll().ToList();
+            ViewBag.Title = "Archive  - " + dateTime.ToString("MMMM") + " " + dateTime.Year;
+            var posts = _postRepository.FindAll()
+                .Where(o => o.CreatedAt.Month == dateTime.Month && o.CreatedAt.Year == dateTime.Year)
+                .ToList();
             posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            return View(posts);
+            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            return View("Index", indexModel);
         }
 
         public ActionResult Rss()

@@ -1,4 +1,6 @@
-﻿<!-- sidebar -->
+﻿@model tltjr.Models.SidebarModel
+
+<!-- sidebar -->
 <aside id="sidebar" class="alignright span4">
     <!-- Search -->
     <section class="search clearfix">
@@ -16,21 +18,13 @@
     </div>
     <section class="post-widget block-grey">
         <ul class="clearfix block-light wrap15">
-            <li>
-                <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
-                <p><em>12 Apr 2012, 3 comments</em></p>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
-                <p><em>12 Apr 2012, 3 comments</em></p>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <a href="#">Ut in lacus rhoncus elit egesta sluctus. Nullam at</a>
-                <p><em>12 Apr 2012, 3 comments</em></p>
-                <div class="clear"></div>
-            </li>
+            @foreach (var recent in Model.RecentPosts)
+            {
+                <li>
+                    @Html.ActionLink(recent.Title, "Post", "Blog", new { slug = recent.Slug }, null)
+                    <div class="clear"></div>
+               </li>
+            }
         </ul>
     </section>
 
@@ -41,18 +35,13 @@
     </div>
     <section class="post-widget block-grey">
         <ul class="clearfix block-light wrap15">
-            <li>
-                <a href="#">February 2013</a>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <a href="#">January 2013</a>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <a href="#">December 2012</a>
-                <div class="clear"></div>
-            </li>
+            @foreach (var month in Model.Archives) 
+            {
+                <li>
+                    @Html.ActionLink(month.Text, "Archive", "Blog", new { dateTime = month.DateTime }, null)
+                    <div class="clear"></div>
+                </li>
+            }
         </ul>
     </section>
 </aside>

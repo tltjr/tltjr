@@ -1,4 +1,4 @@
-﻿@model IEnumerable<tltjr.Models.Post>
+﻿@model tltjr.Models.IndexModel
 
 <!-- container -->
 <section id="container">
@@ -11,8 +11,8 @@
     <div class="container">
         <div class="row down160">
             <!-- page content -->
-            @Html.Partial("_Summaries")
-            @Html.Partial("_Sidebar")
+            @Html.Partial("_Summaries", Model.Posts)
+            @Html.Partial("_Sidebar", Model.SidebarModel)
         </div>
     </div>
 </section>
