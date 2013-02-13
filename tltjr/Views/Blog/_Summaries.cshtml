@@ -10,25 +10,25 @@
             </div>
         </div>
 
-        @for (int i = 0; i < 4; i++)
+        @foreach (var post in Model)
         {
             <article class="blog-post span8">
                 <div class="block-grey">
                     <div class="block-light">
-                        <div class="wrapper-img">
-                            <a href="./portfolio2.html">
-                                <img src="example/blog1.jpg" alt="photo" /></a>
-                        </div>
                         <div class="wrapper">
-                            <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                            <a href="#" class="blog-comments">3</a>
+                            <h2 class="post-title">@Html.ActionLink(@post.Title, @post.Url)</h2>
                             <p>
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                                          sed diam nonummy nibh euismod tdolore mag quam erat volutpat.
-                                          <a href="#" class="read-more">[...]</a>
+                                @post.Summary
+                                @if (post.More) 
+                                {
+                                    <a href="@post.Url" class="read-more">[...]</a>
+                                }
                             </p>
                             <p class="tags">
-                                Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
+                                @if (post.Tags != null) 
+                                {
+                                    @Html.Partial("_Tags", post.Tags)
+                                }
                             </p>
                         </div>
                     </div>
