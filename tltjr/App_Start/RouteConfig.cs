@@ -14,6 +14,16 @@ namespace tltjr
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "RSS",
+                "rss",
+                new {controller = "Blog", action = "Rss"});
+
+            routes.MapRoute(
+                "Post",
+                "{year}/{month}/{slug}",
+                new {controller = "Blog", action = "Post" });
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Blog", action = "Index", id = UrlParameter.Optional }

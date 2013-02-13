@@ -19,7 +19,7 @@ namespace tltjr.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Title = ConfigurationManager.AppSettings["title"];
+            ViewBag.Title = "Blog";
             var posts = _postRepository.FindAll().ToList();
 			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
             return View(posts.Take(10));
@@ -48,16 +48,16 @@ namespace tltjr.Controllers
 
         public ActionResult Post(string slug)
         {
-            ViewBag.Title = ConfigurationManager.AppSettings["title"];
+            ViewBag.Title = "Blog";
             var post = _postRepository.FindOneByKey("Slug", slug);
             return View(post);
         }
 
         public ActionResult Tag(string tag)
         {
-            ViewBag.Title = ConfigurationManager.AppSettings["title"];
-            var tagged = new Tagged {Posts = _postRepository.FindAllByKey("Tags", tag), Tag = tag};
-            return View(tagged);
+            ViewBag.Title = "Posts Tagged: " + tag;
+            var posts = _postRepository.FindAllByKey("Tags", tag);
+            return View("Index", posts);
         }
 
         [Authorize]
