@@ -17,32 +17,24 @@
                     <article class="blog-post span8">
                         <div class="block-grey">
                             <div class="block-light">
-                                <div class="wrapper-img">
-                                    <a href="./portfolio2.html"><img src="example/blog2.jpg" alt="photo"/></a>
-                                </div>
                                 <div class="wrapper">
-                                    <h2 class="post-title"><a href="#">Lorem ipsum</a></h2>
-                                    <a href="#" class="blog-comments">3</a>
-                                    <p>
-                                        Etiam imperdiet, ante at porttitor rutrum, felis nisi pellentesque enim, vel viverra quam orci eu massa.
-                                        Integer commodo, velit eget dapibus tincidunt, mauris ligula porttitor sapien, eget rhoncus dolor mi eu velit.
-                                        Fusce mattis dui eu velit fringilla viverra. Aliquam non nibh non orci imperdiet venenatis.
-                                        Quisque varius orci a lacus adipiscing id tempus elit pharetra.
-                                    </p>
-                                    <blockquote>
-                                        <p>
-                                            Etiam imperdiet, ante at porttitor rutrum, felis nisi pellentesque enim, vel viverra quam orci eu massa.
-                                            Integer commodo, velit eget dapibus tincidunt, mauris ligula porttitor sapien, eget rhoncus dolor mi eu velit.
-                                        </p>
-                                    </blockquote>
-                                    <p>
-                                        Duis et eros at nulla euismod aliquet vitae ac odio.
-                                        Nulla porta metus vitae mi ornare quis accumsan ligula congue.
-                                        Integer commodo, velit eget dapibus tincidunt, mauris ligula porttitor sapien, eget rhoncus dolor mi eu velit.
-                                        Fusce mattis dui eu velit fringilla viverra. Aliquam non nibh non orci imperdiet venenatis.
-                                    </p>
+                                    <h2 class="post-title">@Model.Title</h2>
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+                                        <div class="edit blog-comments">
+                                            @Html.ActionLink("Edit", "Edit", new { objectId = Model.Id}, null)
+                                        </div>
+                                    }
+                                    @{
+                                        var body = Model.Body;
+                                        var bodyHtml = body.Replace("\r\n", "<br />");
+                                        @Html.Raw(bodyHtml)
+                                    }
                                     <p class="tags">
-                                        Tags: <a href="#">Science</a>, <a href="#">Technology</a>, <a href="#">News</a>
+                                        @if (Model.Tags != null) 
+                                        {
+                                            @Html.Partial("_Tags", Model.Tags)
+                                        }
                                     </p>
                                     <hr>
                                     <!--comments-->
@@ -52,7 +44,11 @@
                     </article>
                 </div>
             </section>
-            @Html.Partial("_Sidebar");
+            @Html.Partial("_Sidebar")
         </div>
     </div>
 </section>
+
+<script type="text/javascript">
+    $("#nav-blog").addClass("active");
+</script>
