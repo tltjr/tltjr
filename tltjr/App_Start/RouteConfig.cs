@@ -20,7 +20,7 @@ namespace tltjr
 
             routes.MapRoute(
                 "Post",
-                "{year}/{month}/{slug}",
+                "{year}/{month}/{day}/{slug}",
                 new {controller = "Blog", action = "Post" });
 
             routes.MapRoute(

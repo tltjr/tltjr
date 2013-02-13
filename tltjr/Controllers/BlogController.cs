@@ -74,6 +74,7 @@ namespace tltjr.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         [ValidateInput(false)]
         public ActionResult Edit(Post post)
         {

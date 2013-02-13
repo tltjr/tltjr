@@ -3,8 +3,14 @@
 @if (Model != null)
 {
     @Html.Raw("Tags: ")
-    foreach (var tag in Model) {
-        @Html.ActionLink(tag, "Tag", new {tag})
-        @Html.Raw(" ")
+    var tags = Model.ToArray();
+    for (var i = 0; i < tags.Length; i++)
+    {
+        var tag = tags[i];
+        @Html.ActionLink(tag, "Tag", new { tag })
+        if (i < tags.Length - 1)
+        {
+            @Html.Raw(", ")
+        }
     }
 }

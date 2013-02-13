@@ -34,7 +34,7 @@ namespace tltjr.Models
                 var lower = Title.ToLower();
                 var spacesParsed = Regex.Replace(lower, @" ", "_");
                 Slug = Regex.Replace(spacesParsed, @"[^a-z0-9_]", String.Empty);
-                Url = CreatedAt.Year + "/" + CreatedAt.Month + "/" + Slug + "/";
+                Url = CreatedAt.Year + "/" + CreatedAt.Month + "/" + CreatedAt.Day + "/" + Slug + "/";
             }
         }
         public IEnumerable<string> Tags { get; set; }
