@@ -51,17 +51,15 @@ namespace tltjr.Controllers
         {
             ViewBag.Title = "Blog";
             var post = _postRepository.FindOneByKey("Slug", slug);
-            var posts = _postRepository.FindAll().ToList();
-			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            var postModel = new PostModel { Post = post, SidebarModel = new SidebarModel(posts.Take(3)) };
+            var postModel = new PostModel { Post = post, SidebarModel = new SidebarModel(GetRecentPosts()) };
             return View(postModel);
         }
 
         public ActionResult Tag(string tag)
         {
             ViewBag.Title = "Posts Tagged: " + tag;
-            var posts = _postRepository.FindAllByKey("Tags", tag);
-            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            var postsTagged = _postRepository.FindAllByKey("Tags", tag);
+            var indexModel = new IndexModel { Posts = postsTagged.Take(10), SidebarModel = new SidebarModel(GetRecentPosts()) };
             return View("Index", indexModel);
         }
 
@@ -102,7 +100,7 @@ namespace tltjr.Controllers
                 .Where(o => o.CreatedAt.Month == dateTime.Month && o.CreatedAt.Year == dateTime.Year)
                 .ToList();
             posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(GetRecentPosts()) };
             return View("Index", indexModel);
         }
 
@@ -117,6 +115,13 @@ namespace tltjr.Controllers
             var feed = new SyndicationFeed(title, description, uri,
                 _rssHelper.CreateSyndicationItems(twenty, uri));
             return new RssActionResult { Feed = feed };
+        }
+
+        private IEnumerable<Post> GetRecentPosts()
+        {
+            var posts = _postRepository.FindAll().ToList();
+			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
+            return posts.Take(3);
         }
     }
 }

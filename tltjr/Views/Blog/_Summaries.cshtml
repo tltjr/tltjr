@@ -21,7 +21,7 @@
                                 @post.Summary
                                 @if (post.More) 
                                 {
-                                    <a href="@post.Url" class="read-more">[...]</a>
+                                    @Html.ActionLink("[...]", "Post", new { slug = @post.Slug }, new { @class = "read-more" })
                                 }
                             </p>
                             <p class="tags">
