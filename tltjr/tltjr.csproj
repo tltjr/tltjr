@@ -132,6 +132,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Data\Bcrypt.cs" />
     <Compile Include="Data\ConnectionString.cs" />
@@ -330,6 +331,7 @@
     <Content Include="Views\Blog\Post.cshtml" />
     <Content Include="Views\Blog\_Tags.cshtml" />
     <Content Include="Views\Blog\Edit.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
