@@ -87,3 +87,28 @@
 em {
     color: #d1d1d1;
 }
+
+#contact-form {
+    width: 650px;
+}
+
+#contact-form label:after {
+    content: ": *";
+}
+
+#contact-form input {
+    width: 240px;
+}
+
+#contact-form button {
+    margin-top: 10px;
+}
+
+#contact-form textarea {
+    width: 600px;
+    height: 240px;
+}
+
+#alt-contact p {
+    font-size: 14px;
+}
