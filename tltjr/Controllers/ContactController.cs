@@ -8,13 +8,15 @@ namespace tltjr.Controllers
 {
     public class ContactController : Controller
     {
-        //
-        // GET: /Contact/
-
         public ActionResult Index()
         {
             return View();
         }
 
+        [HttpPost]
+        public ActionResult Send()
+        {
+            return View("Index");
+        }
     }
 }
