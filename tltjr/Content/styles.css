@@ -88,10 +88,6 @@ em {
     color: #d1d1d1;
 }
 
-#contact-form {
-    width: 650px;
-}
-
 #contact-form label:after {
     content: ": *";
 }
@@ -100,8 +96,8 @@ em {
     width: 240px;
 }
 
-#contact-form button {
-    margin-top: 10px;
+#contact-form .form-actions {
+    padding-left: 0;
 }
 
 #contact-form textarea {
