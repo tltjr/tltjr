@@ -108,3 +108,11 @@ em {
 #alt-contact p {
     font-size: 14px;
 }
+
+#contact-form input.error, textarea.error {
+    border: 1px solid #ff3f3f;
+}
+
+#contact-form label.error:after {
+    content: none;
+}

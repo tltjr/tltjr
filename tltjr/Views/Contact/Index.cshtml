@@ -9,13 +9,13 @@
                 <fieldset>
                     <legend></legend>
                     <label>Name</label>
-                    <input type="text" />
+                    <input name="name" type="text" class="required" />
                     <label>Email</label>
-                    <input type="email" />
+                    <input name="email" type="email" class="required email" />
                     <label>Subject</label>
-                    <input type="text" />
+                    <input name="subject" type="text" class="required" />
                     <label>Message</label>
-                    <textarea></textarea>
+                    <textarea name="message" class="required"></textarea>
                     <div class="form-actions">
                         <button type="submit" class="btn btn-large btn-primary">Send</button>
                     </div>
@@ -33,6 +33,8 @@
     </div>
 </div>
 
+@Scripts.Render("~/bundles/jqueryval");
 <script type="text/javascript">
     $("#nav-contact").addClass("active");
+    $("#contact-form").validate();
 </script>
