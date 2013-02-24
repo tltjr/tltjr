@@ -16,3 +16,6 @@ obj
 
 *.suo
 *.swp
+
+# protect sensitive data
+Web.config
