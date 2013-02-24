@@ -19,20 +19,28 @@ namespace tltjr.Models
 
     public class SidebarModel
     {
-        public IEnumerable<Post> RecentPosts { get; private set; }
+        private IEnumerable<Post> _sortedPosts;
 
-        public SidebarModel(IEnumerable<Post> recentPosts)
+        public SidebarModel(IEnumerable<Post> sortedPosts)
         {
-            RecentPosts = recentPosts;
+            _sortedPosts = sortedPosts;
         }
 
+        public IEnumerable<Post> RecentPosts { get { return _sortedPosts.Take(3); } }
         public IEnumerable<ArchiveModel> Archives
         {
             get
             {
-                yield return new ArchiveModel(DateTime.Now);
-                yield return new ArchiveModel(DateTime.Now.AddMonths(-1));
-                yield return new ArchiveModel(DateTime.Now.AddMonths(-2));
+                List<ArchiveModel> result = new List<ArchiveModel>();
+                for (int i = 0; i > -24; i--)
+                {
+                    var dateTime = DateTime.Now.AddMonths(i);
+                    if (_sortedPosts.Any(post => post.CreatedAt.Month == dateTime.Month && post.CreatedAt.Year == dateTime.Year))
+                        result.Add(new ArchiveModel(dateTime));
+                    if (result.Count == 3)
+                        continue;
+                }
+                return result;
             }
         }
     }

@@ -22,7 +22,7 @@ namespace tltjr.Controllers
             ViewBag.Title = "Blog";
             var posts = _postRepository.FindAll().ToList();
 			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts.Take(3)) };
+            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(posts) };
             return View(indexModel);
         }
 
@@ -51,7 +51,9 @@ namespace tltjr.Controllers
         {
             ViewBag.Title = "Blog";
             var post = _postRepository.FindOneByKey("Slug", slug);
-            var postModel = new PostModel { Post = post, SidebarModel = new SidebarModel(GetRecentPosts()) };
+            var posts = _postRepository.FindAll().ToList();
+			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
+            var postModel = new PostModel { Post = post, SidebarModel = new SidebarModel(posts) };
             return View(postModel);
         }
 
@@ -59,7 +61,9 @@ namespace tltjr.Controllers
         {
             ViewBag.Title = "Posts Tagged: " + tag;
             var postsTagged = _postRepository.FindAllByKey("Tags", tag);
-            var indexModel = new IndexModel { Posts = postsTagged.Take(10), SidebarModel = new SidebarModel(GetRecentPosts()) };
+            var posts = _postRepository.FindAll().ToList();
+			posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
+            var indexModel = new IndexModel { Posts = postsTagged.Take(10), SidebarModel = new SidebarModel(posts) };
             return View("Index", indexModel);
         }
 
@@ -96,11 +100,11 @@ namespace tltjr.Controllers
         public ActionResult Archive(DateTime dateTime)
         {
             ViewBag.Title = "Archive  - " + dateTime.ToString("MMMM") + " " + dateTime.Year;
-            var posts = _postRepository.FindAll()
-                .Where(o => o.CreatedAt.Month == dateTime.Month && o.CreatedAt.Year == dateTime.Year)
+            var allPosts = _postRepository.FindAll().ToList();
+            allPosts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
+            var monthPosts = allPosts.Where(o => o.CreatedAt.Month == dateTime.Month && o.CreatedAt.Year == dateTime.Year)
                 .ToList();
-            posts.Sort((x, y) => y.CreatedAt.CompareTo(x.CreatedAt));
-            var indexModel = new IndexModel { Posts = posts.Take(10), SidebarModel = new SidebarModel(GetRecentPosts()) };
+            var indexModel = new IndexModel { Posts = monthPosts.Take(10), SidebarModel = new SidebarModel(allPosts) };
             return View("Index", indexModel);
         }
 
