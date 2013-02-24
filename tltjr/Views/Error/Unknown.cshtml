@@ -1,16 +1,13 @@
-﻿@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Error</title>
-</head>
-<body>
-    <h2>
-        Sorry, an error occurred while processing your request.
-    </h2>
-</body>
-</html>
+﻿<div class="container">
+    <div class="row down160">
+        <h1>Sorry, an error has occurred.</h1>
+        <p>Something has gone sideways. Sorry for the inconvenience. Below are some common pages you might have less trouble with.</p>
+        <ul>
+            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+            <li>@Html.ActionLink("Blog", "Index", "Blog")</li>
+            <li>@Html.ActionLink("Resume", "Index", "Resume")</li>
+            <li><a href="https://github.com/tltjr">GitHub</a></li>
+            <li>@Html.ActionLink("Contact", "Index", "Contact")</li>
+        </ul>
+    </div>
+</div>
