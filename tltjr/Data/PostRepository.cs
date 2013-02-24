@@ -7,15 +7,13 @@ using tltjr.Models;
 
 namespace tltjr.Data
 {
-    public class PostRepository : IBasicPersistenceProvider<Post>
+    public class PostRepository : BaseRepository, IBasicPersistenceProvider<Post>
     {
         private readonly MongoCollection<Post> _collection;
 
-        public PostRepository()
+        public PostRepository() : base()
         {
-	        string connection = ConfigurationManager.AppSettings["env"].Equals("local") ? "mongodb://localhost/Posts" : ConnectionString.MongoLab;
-            var database = MongoDatabase.Create(connection);
-            _collection = database.GetCollection<Post>("Posts");
+            _collection = Database.GetCollection<Post>("Posts");
         }
 
         public Post FindOneByKey(string key, string value)

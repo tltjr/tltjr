@@ -7,15 +7,13 @@ using MongoDB.Driver.Builders;
 
 namespace tltjr.Data
 {
-    public class UserRepository
+    public class UserRepository : BaseRepository
     {
         private readonly MongoCollection<User> _collection;
 
-        public UserRepository()
+        public UserRepository() : base()
         {
-	        string connection = ConfigurationManager.AppSettings["env"].Equals("local") ? "mongodb://localhost/Users" : ConnectionString.MongoLab;
-            var database = MongoDatabase.Create(connection);
-            _collection = database.GetCollection<User>("Users");
+            _collection = Database.GetCollection<User>("Users");
         }
 
         public MembershipUser CreateUser(string username, string password)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -6,6 +7,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using tltjr.Data;
 
 namespace tltjr
 {
@@ -22,6 +24,17 @@ namespace tltjr
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            RegisterUser();
+        }
+
+        private static void RegisterUser()
+        {
+            var repo = new UserRepository();
+            var username = ConfigurationManager.AppSettings["user"];
+            var user = repo.GetUser(username);
+            if (null != user) return;
+            var password = ConfigurationManager.AppSettings["password"];
+            repo.CreateUser(username, password);
         }
     }
 }
