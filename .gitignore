@@ -19,3 +19,6 @@ obj
 
 # protect sensitive data
 Web.config
+
+# exclude publish profiles
+tltjr/Properties/PublishProfiles/
