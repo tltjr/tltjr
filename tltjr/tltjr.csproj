@@ -285,6 +285,8 @@
     <Content Include="Global.asax" />
     <None Include="Properties\PublishProfiles\tltjr - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\tltjr - Web Deploy.pubxml" />
+    <Content Include="Resumes\thornton-resume.docx" />
+    <Content Include="Resumes\thornton-resume.pdf" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
